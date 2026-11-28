@@ -5,19 +5,6 @@ const backup = document.getElementById('backup');
 const status = document.getElementById('status');
 const timeout = 2800;
 let pendingEntry = null;
-const card = document.querySelector('.entrance-card');
-const art = card.querySelector('.specimen');
-const artToggle = document.getElementById('change-art');
-artToggle.hidden = false;
-artToggle.onclick = () => {
-  const interactive = art.hidden;
-  art.hidden = !interactive;
-  card.classList.toggle('interactive', interactive);
-  artToggle.setAttribute('aria-pressed', String(interactive));
-  artToggle.textContent = interactive ? '返回封面插画' : '转动立体苹果';
-  document.dispatchEvent(new CustomEvent('orchard-screen', {detail:{scene: interactive ? art : null}}));
-};
-
 function reachable(origin) {
   // The two hosts serve this public stylesheet independently of login.
   // A non-matching media query keeps it from applying to the entry page.

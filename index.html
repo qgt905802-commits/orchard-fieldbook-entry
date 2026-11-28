@@ -2,27 +2,23 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="referrer" content="no-referrer"><meta name="theme-color" content="#121d33">
+  <meta name="referrer" content="no-referrer"><meta name="theme-color" content="#F6F3EA">
   <title>果序 · 模型成果入口</title>
-  <link rel="stylesheet" href="./fieldbook.css?v=exhibit-1"><script defer src="./fieldbook.js?v=depth-1"></script><script defer src="./entry.js?v=training-2"></script>
-  <link rel="stylesheet" href="./entry-cover.css?v=training-2"><link rel="preload" as="image" href="./apple-atlas.webp">
+  <link rel="stylesheet" href="./entry-cover.css?v=guide1"><script defer src="./entry.js?v=guide1"></script>
 </head>
 <body class="public-entrance">
-  <header class="app-bar"><div class="brand"><span class="mark" aria-hidden="true"></span><strong>果序</strong><em>Orchard Studio</em></div></header>
+  <header class="app-bar"><div class="brand"><span class="mark" aria-hidden="true"></span><strong>果序</strong><em>果园观察手册</em></div></header>
   <main>
     <section class="entrance-card">
-      <div><small class="eyebrow">果序 · 成员入口</small><h1>苹果模型成果展</h1>
-        <p>一树苹果，模型能逐个认出多少？用团队账号进入，切换原图和逐果轮廓，看这次续训在两处果园的表现。</p>
+      <div><small class="eyebrow">团队工作台 / 成员入口</small><h1>果园观察手册</h1>
+        <p>使用团队账号查看逐果识别、复核标注或进入训练中心。系统优先连接主站，也可手动选择线路。</p>
         <div class="entry-actions">
           <a id="enter" href="https://orchard-apple-review.orchard-fieldbook.workers.dev/">进入模型成果首页 <span aria-hidden="true">→</span></a>
           <a id="enter-training" href="https://orchard-apple-review.orchard-fieldbook.workers.dev/training">训练模型 <span aria-hidden="true">→</span></a>
         </div>
-        <p class="alternate"><a id="primary" href="https://orchard-apple-review.orchard-fieldbook.workers.dev/">Cloudflare 主入口</a><a id="backup" href="https://orchard-apple-review.vercel.app/">Vercel 备用入口</a></p>
+        <h2>手动选择线路</h2><p class="alternate"><a id="primary" href="https://orchard-apple-review.orchard-fieldbook.workers.dev/">Cloudflare 主入口</a><a id="backup" href="https://orchard-apple-review.vercel.app/">Vercel 备用入口</a></p>
         <p id="status" role="status"></p>
       </div>
-      <div class="specimen" aria-hidden="true" hidden><div class="specimen-space"><i class="negative"></i><i class="mount"></i><i class="sight"></i></div><i class="fruit"></i></div>
-      <button id="change-art" type="button" aria-pressed="false" hidden>转动立体苹果</button>
     </section>
-    <footer><span class="art-credit">封面剖面与立体苹果为 AI 辅助创作的概念插画。真实预测样图仅向已登录成员展示。</span></footer>
   </main>
 </body></html>
