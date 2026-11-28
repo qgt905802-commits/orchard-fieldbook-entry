@@ -1,4 +1,4 @@
-// The paper, photograph, specimen and sight line share a vanishing point.
+// The glass, photograph, specimen and sight line share a vanishing point.
 (() => {
   const motion = matchMedia('(prefers-reduced-motion: no-preference)');
   const fine = matchMedia('(hover: hover) and (pointer: fine)');
