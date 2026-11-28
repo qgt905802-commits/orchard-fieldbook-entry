@@ -1,0 +1,24 @@
+.public-entrance main { width:min(1450px,94vw); margin:clamp(20px,5vh,64px) auto; }
+.entrance-card { min-height:clamp(450px,43vw,660px); grid-template-columns:minmax(0,.93fr) minmax(0,1.1fr); }
+.entrance-card:not(.interactive)::before {
+  background:linear-gradient(92deg,#0719274d,transparent 59%),url("./apple-atlas.webp") 72% center / cover;
+}
+.entrance-card h1 { font-size:clamp(38px,4.65vw,76px); text-wrap:balance; }
+.entrance-card p { color:#e3eeed; }
+.entrance-card #enter { margin:5px 0; }
+.entrance-card .specimen[hidden],#change-art[hidden] { display:none!important; }
+#change-art { position:absolute; right:17px; bottom:15px; min-height:44px; padding:5px 12px; border:1px solid #9dbcb6; border-radius:2px;
+  background:#0b222cd6; color:#e6f6ed; font:500 .84rem/1.4 -apple-system,"PingFang SC",sans-serif; cursor:pointer; }
+#change-art:hover { background:#244247; }
+#change-art:focus-visible { outline:3px solid #f2c47b; outline-offset:2px; }
+@media(max-width:670px) {
+  .public-entrance main { width:100%; margin:0 auto; }
+  .public-entrance footer { margin:14px 18px; }
+  .entrance-card { display:flex; flex-direction:column; align-items:stretch; min-height:0; padding:clamp(222px,61vw,335px) 20px 26px; border-inline:0;
+    background:linear-gradient(110deg,#10263450,#192c3d9c),url("./atlas-lines.webp") center/cover; }
+  .entrance-card:not(.interactive)::before { inset:0 0 auto; height:clamp(234px,64vw,355px);
+    background:url("./apple-atlas.webp") 83% 35% / auto 106% no-repeat; mask-image:linear-gradient(black 78%,transparent); }
+  .entrance-card.interactive .specimen { position:absolute; top:8px; left:15%; width:70%; height:clamp(178px,50vw,270px); }
+  #change-art { top:12px; right:12px; bottom:auto; }
+  .entrance-card h1 { margin:.17em 0; }
+}

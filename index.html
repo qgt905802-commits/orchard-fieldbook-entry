@@ -3,21 +3,23 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer"><meta name="theme-color" content="#121d33">
-  <title>果序 · 小组入口</title>
-  <link rel="stylesheet" href="./fieldbook.css?v=depth-1"><script defer src="./fieldbook.js?v=depth-1"></script><script defer src="./entry.js"></script>
+  <title>果序 · 模型成果入口</title>
+  <link rel="stylesheet" href="./fieldbook.css?v=exhibit-1"><script defer src="./fieldbook.js?v=depth-1"></script><script defer src="./entry.js"></script>
+  <link rel="stylesheet" href="./entry-cover.css"><link rel="preload" as="image" href="./apple-atlas.webp">
 </head>
 <body class="public-entrance">
   <header class="app-bar"><div class="brand"><span class="mark" aria-hidden="true"></span><strong>果序</strong><em>Orchard Studio</em></div></header>
   <main>
     <section class="entrance-card">
-      <div><small class="eyebrow">团队标注室 · 小组入口</small><h1>果园影像工作台</h1>
-        <p>小组共同复核 4,440 张果园原图。进入后可以继续标苹果，也可以看最新模型在哪些照片上数得更准。</p>
-        <a id="enter" href="https://orchard-apple-review.orchard-fieldbook.workers.dev/">打开标注工作台 →</a>
+      <div><small class="eyebrow">果序 · 成员入口</small><h1>苹果模型成果展</h1>
+        <p>一树苹果，模型能逐个认出多少？用团队账号进入，切换原图和逐果轮廓，看这次续训在两处果园的表现。</p>
+        <a id="enter" href="https://orchard-apple-review.orchard-fieldbook.workers.dev/">进入模型成果首页 →</a>
         <p class="alternate"><a id="primary" href="https://orchard-apple-review.orchard-fieldbook.workers.dev/">Cloudflare 主入口</a><a id="backup" href="https://orchard-apple-review.vercel.app/">Vercel 备用入口</a></p>
         <p id="status" role="status"></p>
       </div>
-      <div class="specimen" aria-hidden="true"><div class="specimen-space"><i class="negative"></i><i class="mount"></i><i class="sight"></i></div><i class="fruit"></i></div>
+      <div class="specimen" aria-hidden="true" hidden><div class="specimen-space"><i class="negative"></i><i class="mount"></i><i class="sight"></i></div><i class="fruit"></i></div>
+      <button id="change-art" type="button" aria-pressed="false" hidden>转动立体苹果</button>
     </section>
-    <footer><span class="art-credit">果园摄影 <a href="https://commons.wikimedia.org/wiki/File:Piper_Orchard_three_apples.jpg" rel="noreferrer">Dennis Bratland，CC BY-SA 3.0</a>。立体苹果为 AI 生成的页面插图。</span></footer>
+    <footer><span class="art-credit">封面剖面与立体苹果为 AI 辅助创作的概念插画。真实预测样图仅向已登录成员展示。</span></footer>
   </main>
 </body></html>

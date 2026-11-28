@@ -272,3 +272,11 @@ h1, .report-panel h2, .live-training h2, .brief h2, .queue h2, .gate h2 { font-f
 .report-status a { text-underline-offset: .22em; }
 .app-bar, .progress-page > .report-page-title { text-shadow: none; }
 body.edge-back #task, body.edge-back #task::before { background-color: #192840; }
+.cover::before,.entrance-card::before {
+  background:linear-gradient(115deg,#05182965,#17343c0d),url("./atlas-lines.webp") center 58% / cover;
+  filter:none; opacity:1;
+}
+.public-entrance::before {
+  background:linear-gradient(110deg,#11233580,#12263940),url("./atlas-lines.webp") center / cover;
+  opacity:.72;
+}
