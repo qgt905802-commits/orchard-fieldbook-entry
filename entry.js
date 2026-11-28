@@ -1,11 +1,10 @@
 'use strict';
 
-const enter = document.getElementById('enter');
-const primary = document.getElementById('primary').href;
-const backup = document.getElementById('backup').href;
+const primary = document.getElementById('primary');
+const backup = document.getElementById('backup');
 const status = document.getElementById('status');
 const timeout = 2800;
-let pending = false;
+let pendingEntry = null;
 const card = document.querySelector('.entrance-card');
 const art = card.querySelector('.specimen');
 const artToggle = document.getElementById('change-art');
@@ -42,30 +41,40 @@ function reachable(origin) {
   });
 }
 
-enter.addEventListener('click', async event => {
+async function enterSite(event) {
   if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   event.preventDefault();
-  if (pending) return;
-  pending = true;
+  const enter = event.currentTarget;
+  const path = new URL(enter.href).pathname;
+  primary.pathname = backup.pathname = path;
+  const checking = pendingEntry !== null;
+  pendingEntry?.removeAttribute('aria-busy');
+  pendingEntry = enter;
   enter.setAttribute('aria-busy', 'true');
-  status.textContent = '正在检查入口…';
+  status.textContent = path === '/training' ? '正在连接训练中心…' : '正在连接模型成果首页…';
+  if (checking) return;
 
   try {
-    const backupCheck = reachable(backup);
-    if (await reachable(primary)) {
-      location.assign(primary);
+    const backupCheck = reachable(backup.href);
+    if (await reachable(primary.href)) {
+      location.assign(primary.href);
     } else if (await backupCheck) {
       status.textContent = '正在打开 Vercel 备用入口…';
-      location.assign(backup);
+      location.assign(backup.href);
     } else {
       status.textContent = '两条线路暂未通过连接检查。可重试或手动打开上面的链接。';
     }
   } finally {
-    pending = false;
-    enter.removeAttribute('aria-busy');
+    pendingEntry.removeAttribute('aria-busy');
+    pendingEntry = null;
   }
-});
+}
+
+for (const link of document.querySelectorAll('.entry-actions a')) link.addEventListener('click', enterSite);
 
 window.addEventListener('pageshow', event => {
-  if (event.persisted) status.textContent = '';
+  if (event.persisted) {
+    status.textContent = '';
+    primary.pathname = backup.pathname = '/';
+  }
 });

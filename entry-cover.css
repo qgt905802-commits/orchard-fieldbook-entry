@@ -5,7 +5,11 @@
 }
 .entrance-card h1 { font-size:clamp(38px,4.65vw,76px); text-wrap:balance; }
 .entrance-card p { color:#e3eeed; }
-.entrance-card #enter { margin:5px 0; }
+.entry-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin:12px 0 5px; }
+.entrance-card .entry-actions a { display:inline-flex; justify-content:space-between; align-items:center; gap:10px; min-height:46px; border-radius:2px; font:650 .97rem/1.45 -apple-system,"PingFang SC",sans-serif; text-decoration:none; }
+.entrance-card #enter-training { padding:9px 16px; color:#e9fff2; border:1px solid #a5cfc1; background:#102831bc; }
+.entrance-card #enter-training:hover { background:#24453f; }
+.entry-actions a:focus-visible { outline:3px solid #f2c47b; outline-offset:3px; }
 .entrance-card .specimen[hidden],#change-art[hidden] { display:none!important; }
 #change-art { position:absolute; right:17px; bottom:15px; min-height:44px; padding:5px 12px; border:1px solid #9dbcb6; border-radius:2px;
   background:#0b222cd6; color:#e6f6ed; font:500 .84rem/1.4 -apple-system,"PingFang SC",sans-serif; cursor:pointer; }
@@ -21,4 +25,12 @@
   .entrance-card.interactive .specimen { position:absolute; top:8px; left:15%; width:70%; height:clamp(178px,50vw,270px); }
   #change-art { top:12px; right:12px; bottom:auto; }
   .entrance-card h1 { margin:.17em 0; }
+}
+@media(max-width:365px) {
+  .entry-actions { gap:7px; }
+  .entrance-card #enter,.entrance-card #enter-training { padding-inline:9px; gap:6px; }
+}
+@media(max-height:500px) and (min-width:671px) {
+  .public-entrance main { margin-block:10px; }
+  .entrance-card { min-height:0; padding-block:20px; }
 }
